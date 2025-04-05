@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 
 const Form = () => {
   const [complaint, setComplaint] = useState('');
+  const [complainantName, setComplainantName] = useState(''); // State for complainant's name
+  const [accusedName, setAccusedName] = useState(''); // State for accused's name
   const [ipcSections, setIpcSections] = useState([]);
   const [error, setError] = useState(null);
 
@@ -36,13 +38,53 @@ const Form = () => {
         className="bg-white shadow-lg rounded-2xl p-6 w-full max-w-xl"
       >
         <h2 className="text-2xl font-semibold mb-4 text-center">File a Complaint</h2>
-        <textarea
-          className="w-full h-40 p-4 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"
-          placeholder="Describe the complaint..."
-          value={complaint}
-          onChange={(e) => setComplaint(e.target.value)}
-          required
-        />
+
+        {/* Complainant's Name Input */}
+        <div className="mb-4">
+          <label className="block text-gray-700 font-medium mb-2" htmlFor="complainantName">
+            Name of Person Registering FIR
+          </label>
+          <input
+            type="text"
+            id="complainantName"
+            className="w-full p-4 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
+            placeholder="Enter your name..."
+            value={complainantName}
+            onChange={(e) => setComplainantName(e.target.value)}
+            required
+          />
+        </div>
+
+        {/* Accused's Name Input */}
+        <div className="mb-4">
+          <label className="block text-gray-700 font-medium mb-2" htmlFor="accusedName">
+            Name of Accused
+          </label>
+          <input
+            type="text"
+            id="accusedName"
+            className="w-full p-4 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
+            placeholder="Enter accused's name..."
+            value={accusedName}
+            onChange={(e) => setAccusedName(e.target.value)}
+          />
+        </div>
+
+        {/* Complaint Textarea */}
+        <div className="mb-4">
+          <label className="block text-gray-700 font-medium mb-2" htmlFor="complaint">
+            Complaint Description
+          </label>
+          <textarea
+            id="complaint"
+            className="w-full h-40 p-4 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"
+            placeholder="Describe the complaint..."
+            value={complaint}
+            onChange={(e) => setComplaint(e.target.value)}
+            required
+          />
+        </div>
+
         <button
           type="submit"
           className="w-full mt-4 bg-blue-600 text-white py-2 rounded-xl hover:bg-blue-700 transition duration-300"
@@ -64,6 +106,15 @@ const Form = () => {
                 <li key={index}>{section}</li>
               ))}
             </ul>
+          </div>
+        )}
+
+        {/* Display Complainant and Accused Names (Optional) */}
+        {(complainantName || accusedName) && (
+          <div className="mt-6 p-4 bg-blue-100 text-blue-800 rounded-xl shadow-inner">
+            <h3 className="font-bold mb-2">FIR Details:</h3>
+            {complainantName && <p>Complainant: {complainantName}</p>}
+            {accusedName && <p>Accused: {accusedName}</p>}
           </div>
         )}
       </form>
