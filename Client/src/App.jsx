@@ -1,8 +1,14 @@
 import React from 'react';
+import Form from '../Components/Form.jsx';
 
 function App() {
   return (
-    <h1 className='font-semibold'>Hello</h1>
+    <div className="text-center">
+      <h1 className='font-bold text-center text-2xl'>VeriFIR</h1>
+      <div className="App">
+      <Form />
+      </div>
+    </div>
   )
 }
 
