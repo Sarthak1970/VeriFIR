@@ -1,2 +1,6 @@
 Dataset
+myenv
+__pycache__/
 .env
+db
+venv
