@@ -1,12 +1,90 @@
-# React + Vite
+# VeriFIR 🔍⚖️
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is the frontend for the FIR Classifier project, built using **React.js** and **Tailwind CSS**. It allows users to file a textual complaint and get predicted IPC Sections using a Flask-based backend with an NLP model.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 💡 Features
 
-## Expanding the ESLint configuration
+- Clean and responsive UI using Tailwind CSS
+- Textarea to file complaints
+- Submits complaints to the backend via `GET` request
+- Displays predicted IPC sections dynamically
+- Easy integration with any Flask API
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 📦 Tech Stack
+
+- [React.js](https://reactjs.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Flask (Backend)](https://flask.palletsprojects.com/) (for serving the model)
+
+---
+
+## 🚀 Getting Started
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/your-username/fir-classifier-frontend.git
+cd fir-classifier-frontend
+```
+
+### 2. Install dependencies
+
+```bash
+npm install
+```
+
+### 3. Start the development server
+
+```bash
+npm run dev
+```
+
+The app should now be running on [http://localhost:5173](http://localhost:5173)
+
+---
+
+## 🔗 Backend Integration
+
+Make sure your Flask backend is running on `http://127.0.0.1:5000`.
+
+The main API endpoint expected:
+
+```
+GET /predict?IPC_Section_Text=<your complaint>
+```
+
+This is already configured in the fetch request in the `Form.jsx` component.
+
+---
+
+<!-- ## 🖼️ UI Preview
+
+_A -->
+
+```
+📂 Project Directory:
+├── src
+│   ├── components
+│   │   └── Form.jsx
+│   ├── App.jsx
+│   └── main.jsx
+├── public
+├── tailwind.config.js
+└── README.md
+```
+
+---
+
+## 🧠 Future Improvements
+
+- Enable file upload and IPC section prediction from documents
+
+---
+
+## 🛡️ License
+
+MIT © 2025 — [Your Name]

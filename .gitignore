@@ -1,4 +1,5 @@
 Dataset
+<<<<<<< HEAD
 .env
 node_modules
 .env
@@ -17,3 +18,10 @@ node_modules
 
 # Hardhat Ignition default folder for deployments against a local node
 ignition/deployments/chain-31337
+=======
+myenv
+__pycache__/
+.env
+db
+venv
+>>>>>>> 207b5e47c18904103c6ce6783c4b16af912e8104
