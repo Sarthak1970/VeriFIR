@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Web3 from 'web3';
-import FIRStorageABI from '../abis/FIRStorage.json';
+import FIRStorageABI from '../src/abis/FIRStorage.json';
 
 const CombinedFIRForm = () => {
   const [formData, setFormData] = useState({
@@ -629,4 +629,4 @@ const CombinedFIRForm = () => {
   );
 };
 
-export default CombinedFIRForm;t
+export default CombinedFIRForm;
